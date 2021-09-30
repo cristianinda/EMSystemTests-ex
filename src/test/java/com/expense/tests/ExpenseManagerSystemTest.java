@@ -37,10 +37,10 @@ public class ExpenseManagerSystemTest {
 		
 		
 		//Buggy Code
-		String expectedTitle = "Hello Page";
+		//String expectedTitle = "Hello Page";
 		
 		//Correct Code
-		//String expectedTitle = "Login page";
+		String expectedTitle = "Login page";
 		
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(expectedTitle, actualTitle);
@@ -51,19 +51,19 @@ public class ExpenseManagerSystemTest {
 	public void afterTest(ITestResult result) throws Exception {
 		
 		driver.quit();
-		
+	/*	
         if(result.getStatus() == ITestResult.FAILURE) {
 			//You need to enter your JIRA Username and Password in below line
-        	BasicCredentials cred = new BasicCredentials("", "");
+        	BasicCredentials cred = new BasicCredentials("cristian.inda.montuy", "Test1234");
 			
 			//You need to enter your JIRA machine IP address with port 8080 in below line
-        	JiraClient jira = new JiraClient("", cred);
+        	JiraClient jira = new JiraClient("http://ec2-3-14-6-161.us-east-2.compute.amazonaws.com:8080/", cred);
 			
 			//You need to enter your JIRA project key in below line
-        	Issue issueName = jira.createIssue("", "Bug").field(Field.SUMMARY, result.getMethod().getMethodName() +"is failed due to: "+ result.getThrowable().toString()).field(Field.DESCRIPTION, "get the description").execute();
+        	Issue issueName = jira.createIssue("auto-bug-logging", "Bug").field(Field.SUMMARY, result.getMethod().getMethodName() +"is failed due to: "+ result.getThrowable().toString()).field(Field.DESCRIPTION, "get the description").execute();
         	System.out.println("Issue is created in Jira with Issue Key: "+issueName.getKey());
         }
-
+*/
 	}
 	
 	
